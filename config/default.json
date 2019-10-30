@@ -1,0 +1,6 @@
+{
+    "env":{
+        "PORT": 4000
+    },
+    "mongoURI": "mongodb+srv://ashwini123:ashwini123@devconnector-pkr2h.mongodb.net/test?retryWrites=true&w=majority"
+}
