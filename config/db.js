@@ -4,7 +4,9 @@ const dbURI = config.get('mongoURI');
 const MongoClient = require('mongodb').MongoClient
 
 const connectDB = () => {
-    MongoClient.connect(dbURI, { useUnifiedTopology: true }, (error, db) => {
+    MongoClient.connect(dbURI, { 
+        useUnifiedTopology: true
+    }, (error, db) => {
         if(error){
             console.error(error.message); 
             process.exit(1)
