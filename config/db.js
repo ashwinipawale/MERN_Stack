@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const dbURI = config.get('mongoURI');
-const MongoClient = require('mongodb').MongoClient
 
 const connectDB = () => {
-    MongoClient.connect(dbURI, { 
-        useUnifiedTopology: true
+    mongoose.connect(dbURI, { 
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useFindAndModify: false
     }, (error, db) => {
         if(error){
             console.error(error.message); 

@@ -11,16 +11,21 @@
     "type": "git",
     "url": "git+https://ashwinichechar@bitbucket.org/ashwinichechar/mern-stack.git"
   },
-  "author": "Ashwini Chechar",
+  "author": "Ashwini",
   "license": "ISC",
   "homepage": "https://bitbucket.org/ashwinichechar/mern-stack#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "config": "^3.2.4",
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
     "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
   }
 }
