@@ -163,34 +163,43 @@
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
+
 .btn.btn-primary {
   background-color: #1797af;
   color: #fff;
 }
+
 .btn.btn-primary:hover {
   background: #45cde7;
 }
+
 .btn.btn-dark {
   background-color: #343a40;
   color: #fff;
 }
+
 .btn.btn-dark:hover {
   background: #3f474e;
 }
+
 .btn.btn-danger {
   background-color: red;
   color: #fff;
 }
+
 .btn.btn-danger:hover {
   background: #ff1a1a;
 }
+
 .btn.btn-success {
   background-color: #0f8000;
   color: #fff;
 }
+
 .btn.btn-success:hover {
   background: #129a00;
 }
+
 .btn:hover {
   background: #626d78;
   color: #fff;
@@ -204,18 +213,22 @@
   background: #f4f4f4;
   color: #333;
 }
+
 .badge.badge-primary {
   background-color: #1797af;
   color: #fff;
 }
+
 .badge.badge-dark {
   background-color: #343a40;
   color: #fff;
 }
+
 .badge.badge-success {
   background-color: #0f8000;
   color: #fff;
 }
+
 .badge.badge-danger {
   background-color: red;
   color: #fff;
@@ -248,18 +261,22 @@
   color: #333;
   width: 89%;
 }
+
 .alert.alert-primary {
   background-color: #1797af;
   color: #fff;
 }
+
 .alert.alert-dark {
   background-color: #343a40;
   color: #fff;
 }
+
 .alert.alert-success {
   background-color: #0f8000;
   color: #fff;
 }
+
 .alert.alert-danger {
   background-color: red;
   color: #fff;
@@ -297,22 +314,28 @@
   display: -ms-flexbox;
   display: flex;
 }
+
 .form .social-input i {
   padding: 0.5rem;
   width: 4rem;
 }
+
 .form .social-input i.fa-twitter {
   color: #38a1f3;
 }
+
 .form .social-input i.fa-facebook {
   color: #3b5998;
 }
+
 .form .social-input i.fa-linkedin {
   color: #3f729b;
 }
+
 .form .social-input i.fa-youtube {
   color: #c4302b;
 }
+
 .form .social-input i.fa-instagram {
   color: #0077b5;
 }
@@ -363,26 +386,30 @@ img {
   border-bottom: solid 1px #1797af;
   opacity: 0.9;
 }
+
 .navbar ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+
 .navbar a {
   color: white;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
+
 .navbar a:hover {
   color: #1797af;
 }
 
 .landing {
   position: relative;
-  background-image: url('./img/showcase.jpg') no-repeat center center/cover;
+  background-image: url('../src/img/showcase.jpg') no-repeat center center/cover;
   height: 100vh;
   background: grey;
 }
+
 .landing-inner {
   color: white;
   height: 100%;
@@ -424,6 +451,7 @@ img {
   grid-template-areas: 'top top' 'about about' 'exp edu' 'github github';
   grid-gap: 1rem;
 }
+
 .profile-grid .profile-top {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -444,16 +472,20 @@ img {
   align-items: center;
   text-align: center;
 }
+
 .profile-grid .profile-top img {
   width: 300px;
 }
+
 .profile-grid .profile-top .icons a {
   color: #fff;
   margin: 0 0.3rem;
 }
+
 .profile-grid .profile-top .icons a:hover {
   color: #343a40;
 }
+
 .profile-grid .profile-about {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -461,6 +493,7 @@ img {
   grid-area: about;
   text-align: center;
 }
+
 .profile-grid .profile-about .skills {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,41 +506,49 @@ img {
   align-items: center;
   text-align: center;
 }
+
 .profile-grid .profile-exp {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: exp;
 }
+
 .profile-grid .profile-edu {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: edu;
 }
+
 .profile-grid .profile-exp > div,
 .profile-grid .profile-edu > div {
   padding: 1rem;
   margin: 1rem;
   border-bottom: #ccc 1px dotted;
 }
+
 .profile-grid .profile-exp:last-child,
 .profile-grid .profile-edu:last-child {
   border: none;
 }
+
 .profile-grid .profile-exp p,
 .profile-grid .profile-edu p {
   margin: 0.5rem 0;
 }
+
 .profile-grid .profile-github {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: github;
 }
+
 .profile-grid .profile-github .repo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+
 .profile-grid .profile-github .repo > div:first-child {
   -webkit-box-flex: 7;
   -ms-flex: 7;
@@ -515,10 +556,113 @@ img {
   -ms-flex-preferred-size: 70%;
   flex-basis: 70%;
 }
+
 .profile-grid .profile-github .repo > div:last-child {
   -webkit-box-flex: 3;
   -ms-flex: 3;
   flex: 3;
   -ms-flex-preferred-size: 20%;
   flex-basis: 20%;
+}
+
+.post-form-header {
+  padding: 0.5rem;
+}
+
+.post {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.post > div:first-child {
+  text-align: center;
+}
+
+.post img {
+  width: 150px;
+}
+
+@media (max-width: 700px) {
+  .hide-sm {
+    display: none;
+  }
+
+  .container {
+    margin-top: 8rem;
+  }
+
+  .x-large {
+    font-size: 3rem;
+  }
+
+  .large {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+
+  ul {
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .dash-buttons a {
+    display: block;
+    widows: 100%;
+    margin-bottom: 0.2rem;
+  }
+
+  .profile {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  ul {
+    display: none;
+  }
+
+  .profile-grid {
+    grid-template-areas:
+      'top'
+      'about'
+      'exp'
+      'edu'
+      'github';
+  }
+
+  .profile-about .skills {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .post {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .post a,
+  .post button {
+    padding: 0.3rem 0.4rem;
+  }
 }
