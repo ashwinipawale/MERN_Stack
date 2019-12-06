@@ -34,7 +34,7 @@ export const NavBar = ({ logout, auth: { isAuthenticated, loading } }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-code'></i>DevConnector{' '}
+          <i className='fas fa-home'></i> {'      '}DevNetwork{' '}
         </Link>
       </h1>
 

@@ -48,7 +48,6 @@ export const Login = ({ login, isAuthenticated }) => {
           <input
             type='password'
             placeholder='Password'
-            minLength='6'
             name='password'
             value={password}
             onChange={e => onChange(e)}
@@ -58,7 +57,10 @@ export const Login = ({ login, isAuthenticated }) => {
         <input type='submit' value='Login' className='btn btn-primary' />
       </form>
       <p className='my-1'>
-        Don't have an account?<Link to='/register'>Sign Up</Link>
+        Do you wish to be a part of the community?
+        <Link to='/register'>
+          <b>Sign Up</b>
+        </Link>
       </p>
     </Fragment>
   );

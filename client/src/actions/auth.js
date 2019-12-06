@@ -8,7 +8,8 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  CLEAR_PROFILE
 } from './types';
 
 // Load user
@@ -41,7 +42,6 @@ export const register = (name, email, password) => async dispatch => {
 
   try {
     const res = await axios.post('/api/users', body, config);
-    console.log(res.data);
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -76,7 +76,6 @@ export const login = (email, password) => async dispatch => {
 
   try {
     const res = await axios.post('/api/auth', body, config);
-    console.log(res.data);
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -101,5 +100,6 @@ export const login = (email, password) => async dispatch => {
 
 // Logout / Clear Profile
 export const logout = () => dispatch => {
+  dispatch({ type: CLEAR_PROFILE });
   dispatch({ type: LOGOUT });
 };
