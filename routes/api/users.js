@@ -1,26 +1,26 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { check, validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
-const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const config = require('config');
+const { check, validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
+const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
-const User = require('../../models/User');
+const User = require("../../models/User");
 
 // @route    POST    api/users
 // @access   Public
 // @desc     Register user
 router.post(
-  '/',
+  "/",
   [
-    check('name', 'Name is required')
+    check("name", "Name is required")
       .not()
       .isEmpty(),
-    check('email', 'Please include a valid email').isEmail(),
+    check("email", "Please include a valid email").isEmail(),
     check(
-      'password',
-      'Please enter a password with min 4 characters'
+      "password",
+      "Please enter a password with min 4 characters"
     ).isLength({ min: 4 })
   ],
   (req, res) => {
@@ -38,7 +38,7 @@ router.post(
         if (user.length >= 1) {
           return res
             .status(409)
-            .json({ errors: [{ msg: 'User already exists' }] });
+            .json({ errors: [{ msg: "User already exists" }] });
         } else {
           // Encrypt the password
           bcrypt.hash(password, 10, (err, hash) => {
@@ -63,7 +63,7 @@ router.post(
 
                   jwt.sign(
                     payload,
-                    config.get('jwtSecret'),
+                    config.get("jwtSecret"),
                     { expiresIn: 360000 },
                     (err, token) => {
                       if (err) {
@@ -84,7 +84,7 @@ router.post(
       })
       .catch(err => {
         console.error(err);
-        res.status(500).send('Server error');
+        res.status(500).send("Server error");
       });
   }
 );
