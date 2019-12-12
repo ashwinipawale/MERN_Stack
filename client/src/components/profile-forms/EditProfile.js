@@ -60,7 +60,7 @@ export const EditProfile = ({
         loading || !profile.githubusername ? "" : profile.githubusername,
       bio: loading || !profile.bio ? "" : profile.bio
     });
-  }, [getCurrentProfile, loading, profile]);
+  }, [loading, getCurrentProfile]);
 
   const onSubmit = e => {
     e.preventDefault();

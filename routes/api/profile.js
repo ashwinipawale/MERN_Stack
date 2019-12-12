@@ -41,9 +41,9 @@ router.get("/", (req, res) => {
 // @route    GET    api/profile/user/:userid
 // @access   Public
 // @desc     Get profile by user ID
-router.get("/user/:userid", auth, (req, res) => {
-  console.log(req.param.id);
-  Profile.findOne({ user: req.params.id })
+router.get("/user/:userid", (req, res) => {
+  console.log(req.param.userid);
+  Profile.findOne({ user: req.params.userid })
     .populate("user", ["name", "email"])
     .then(profile => {
       if (profile) {
