@@ -34,8 +34,9 @@ export default function(state = initialState, action) {
     case PROFILE_ERROR:
       return {
         ...state,
-        profile: payload,
-        loading: false
+        error: payload,
+        loading: false,
+        profile: null
       };
     case CLEAR_PROFILE:
       return {

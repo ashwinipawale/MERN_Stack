@@ -13,6 +13,7 @@ const User = require("../../models/User");
 // @desc     Get current user's profile
 router.get("/me", auth, (req, res) => {
   Profile.findOne({ user: req.user.id })
+    .populate("user", ["name", "avatar"])
     .then(profile => {
       if (profile) {
         return res.json(profile);
@@ -28,7 +29,7 @@ router.get("/me", auth, (req, res) => {
 // @desc     Get all profiles
 router.get("/", (req, res) => {
   Profile.find()
-    .populate("user", ["name", "email"])
+    .populate("user", ["name", "email", "avatar"])
     .then(profiles => {
       if (profiles) {
         return res.json(profiles);
@@ -42,9 +43,8 @@ router.get("/", (req, res) => {
 // @access   Public
 // @desc     Get profile by user ID
 router.get("/user/:userid", (req, res) => {
-  console.log(req.param.userid);
   Profile.findOne({ user: req.params.userid })
-    .populate("user", ["name", "email"])
+    .populate("user", ["name", "email", "avatar"])
     .then(profile => {
       if (profile) {
         return res.json(profile);

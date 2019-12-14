@@ -154,7 +154,7 @@
   display: inline-block;
   background-color: #f4f4f4;
   color: #333;
-  padding: 0.4rem 1.3rem;
+  padding: 0.3rem 1.3rem;
   border: none;
   cursor: pointer;
   font-size: 1rem;
@@ -162,7 +162,7 @@
   outline: none;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  border-radius: 50px;
+  border-radius: 45px;
 }
 
 .btn.btn-primary {
@@ -301,7 +301,7 @@
 .form select,
 .form textarea {
   display: block;
-  width: 90%;
+  width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
   border: solid 1px #888;
@@ -568,8 +568,19 @@ img {
   flex-basis: 20%;
 }
 
+.posts {
+  padding: 0.5rem;
+  font-weight: bold;
+}
 .post-form-header {
   padding: 0.5rem;
+}
+
+.post-date {
+  color: rgb(59, 57, 57);
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  font-family: "arial ";
 }
 
 .post {

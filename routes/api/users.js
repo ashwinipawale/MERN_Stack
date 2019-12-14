@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const gravatar = require("gravatar");
 
 const User = require("../../models/User");
 
@@ -40,6 +41,12 @@ router.post(
             .status(409)
             .json({ errors: [{ msg: "User already exists" }] });
         } else {
+          const avatar = gravatar.url(email, {
+            s: "200",
+            r: "pg",
+            d: "mm"
+          });
+          console.log(avatar);
           // Encrypt the password
           bcrypt.hash(password, 10, (err, hash) => {
             if (err) {
@@ -50,8 +57,10 @@ router.post(
                 _id: new mongoose.Types.ObjectId(),
                 name: name,
                 email: email,
-                password: hash
+                password: hash,
+                avatar: avatar
               });
+              console.log(user);
               user
                 .save()
                 .then(result => {
@@ -64,7 +73,7 @@ router.post(
                   jwt.sign(
                     payload,
                     config.get("jwtSecret"),
-                    { expiresIn: 360000 },
+                    { expiresIn: 300 },
                     (err, token) => {
                       if (err) {
                         console.error(err);

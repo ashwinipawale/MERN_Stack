@@ -1,31 +1,31 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const { check, validationResult } = require('express-validator');
-const config = require('config');
-const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs");
+const { check, validationResult } = require("express-validator");
+const config = require("config");
+const jwt = require("jsonwebtoken");
 
-const auth = require('../../middleware/auth');
-const User = require('../../models/User');
+const auth = require("../../middleware/auth");
+const User = require("../../models/User");
 
 // @route    GET    api/auth
 // @access   Public
 // @desc     Get user info by authenticating token in request
-router.get('/', auth, (req, res) => {
+router.get("/", auth, (req, res) => {
   User.findById(req.user.id)
-    .select('-password')
+    .select("-password")
     .then(user => res.json(user))
-    .catch(err => res.status(500).send('Server error'));
+    .catch(err => res.status(500).send("Server error"));
 });
 
 // @route    POST    api/auth
 // @access   Public
 // @desc     Authenticate user & get token
 router.post(
-  '/',
+  "/",
   [
-    check('email', 'Please enter a valid email').isEmail(),
-    check('password', 'Password is required').exists()
+    check("email", "Please enter a valid email").isEmail(),
+    check("password", "Password is required").exists()
   ],
   (req, res) => {
     const errors = validationResult(req);
@@ -44,7 +44,7 @@ router.post(
             if (!isMatch) {
               return res
                 .status(500)
-                .json({ errors: [{ msg: 'Invalid credentials' }] });
+                .json({ errors: [{ msg: "Invalid credentials" }] });
             } else {
               const payload = {
                 user: {
@@ -54,8 +54,8 @@ router.post(
 
               jwt.sign(
                 payload,
-                config.get('jwtSecret'),
-                { expiresIn: 360000 },
+                config.get("jwtSecret"),
+                { expiresIn: 300 },
                 (err, token) => {
                   if (err) {
                     console.error(err);
@@ -69,12 +69,12 @@ router.post(
         } else {
           return res
             .status(500)
-            .json({ errors: [{ msg: 'Invalid credentials' }] });
+            .json({ errors: [{ msg: "Invalid credentials" }] });
         }
       })
       .catch(err => {
         console.error(err);
-        res.status(500).send('Server error');
+        res.status(500).send("Server error");
       });
   }
 );
